@@ -1,10 +1,7 @@
 import { registerApplication, start } from 'single-spa';
+import './style.less';
 
-function pathPrefix(prefix) {
-  return function(location) {
-    return location.hash.startsWith(`#${prefix}`);
-  };
-}
+const pathPrefix = (prefix) => (location) => location.pathname.startsWith(prefix);
 
 function loadApplications() {
   registerApplication(

@@ -8,7 +8,7 @@ log('APP_NAME: ', APP_NAME);
 log('NODE_ENV: ', NODE_ENV);
 
 module.exports = {
-  baseUrl: './',
+  publicPath: '/',
 
   productionSourceMap: false,
 
@@ -16,12 +16,9 @@ module.exports = {
     entry: './src/entry.js',
 
     externals: {
-      lodash: '_',
-      moment: 'moment',
-      vue: 'Vue',
-      vuex: 'Vuex',
-      'vue-router': 'VueRouter',
-      'element-ui': 'ELEMENT',
+      // vue: 'Vue',
+      // vuex: 'Vuex',
+      // 'vue-router': 'VueRouter',
     },
 
     output: {
@@ -37,9 +34,10 @@ module.exports = {
 
   devServer: {
     port: PORT,
+    // historyApiFallback: true,
   },
 };
 
-function log(label, content, options) {
+function log(label, content) {
   console.log('\x1b[1m%s\x1b[31m%s\x1b[0m', label, content);
 }
